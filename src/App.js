@@ -1,0 +1,49 @@
+import React, { Fragment, useState, useEffect } from 'react';
+import axios from 'axios';
+import './App.css';
+
+import Header from './Components/Header';
+import About from './Components/About';
+import Footer from './Components/Footer';
+
+const App = () => {
+  const [resData, setResData] = useState();
+  
+  const fetchData = async () => {
+    try{
+      const response = await axios('/resumeData.json');
+      setResData(response.data);
+    } catch (e){
+      console.log(e);
+    }
+  };
+  
+  useEffect(() => {
+    fetchData();
+  },[]);
+  
+
+  if(resData){
+    const load = document.getElementById('siteLoading');
+    if(load) {
+      load.outerHTML = '';
+    }
+    
+    const mainData = resData.main;
+    return (
+      <Fragment>
+        <Header mainData={mainData} />
+        <About mainData={mainData} />
+        <Footer mainData={mainData} />
+      </Fragment>
+    );
+  } else{
+    return (
+      <Fragment>
+        <h1>Loading or Error</h1>
+      </Fragment>
+    );
+  }
+};
+
+export default App;
