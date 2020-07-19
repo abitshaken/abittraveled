@@ -15,10 +15,10 @@ const About = ({mainData}) => {
             <div className="nine columns main-col">
                <h2>About Me</h2>
                <p>{bio}</p>
-               <p>Have a project for me? Think I'd be a good fit for your team? I'd love to hear from you. Give me a shout by email (<span>{email}</span>) or let's connect on social media.</p>
+               <p>Shoot me an e-mail <span>{email}</span> or let's connect on social media.</p>
                <div className="row">
                   <div className="columns download">
-                     <p><a href={resumeDownload} className="button" target="_blank"><i className="fa fa-download"></i>Download Resume</a></p>
+                     <p><a href={resumeDownload} className="button" target="_blank"><i className="fa fa-download"></i>Download CV</a></p>
                   </div>
                </div>
             </div>
