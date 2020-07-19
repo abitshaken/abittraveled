@@ -2,6 +2,7 @@ import React from 'react';
 
 const Footer = ({mainData}) => {
   if(mainData){
+    var email = mainData.email;
     var networks= mainData.social.map(function(network){
       return <li key={network.name}><a href={network.url} target="_blank"><i className={network.className}></i></a></li>
     })
@@ -11,6 +12,7 @@ const Footer = ({mainData}) => {
     <footer>
       <div className="row">
         <div className="twelve columns">
+          <p>Shoot me an e-mail at <a href="mailto:krabhishaken@gmail.com"><span>{email}</span></a> or let's connect on social media.</p>
           <ul className="social-links">
             {networks}
           </ul>
@@ -23,6 +25,6 @@ const Footer = ({mainData}) => {
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;

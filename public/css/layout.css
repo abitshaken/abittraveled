@@ -210,8 +210,8 @@ ul#nav li.current a { color: #F06000; }
 }
 #about .profile-pic {
    position: relative;
-   width: 150px;
-   height: 150px;
+   width: 180px;
+   height: 180px;
    border-radius: 25%;
 }
 #about .contact-details { width: 41.66667%; }
@@ -787,6 +787,15 @@ footer {
    font-size: 14px;
    text-align: center;
    position: relative;
+}
+
+footer p {
+   color: #8d7474;
+}
+
+footer p span,
+footer p a {
+   color: #fff;
 }
 
 footer a, footer a:visited { color: #525252; }
