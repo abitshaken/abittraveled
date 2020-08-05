@@ -27,10 +27,9 @@ const App = () => {
       load.outerHTML = '';
     }
 
-    const mainData = resData.main;
     return (
       <Fragment>
-        <Header mainData={mainData} />
+        <Header mainData={resData.main} />
       </Fragment>
     );
   } else{
