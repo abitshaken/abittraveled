@@ -3,12 +3,10 @@ import axios from 'axios';
 import './App.css';
 
 import Header from './Components/Header';
-import About from './Components/About';
-import Footer from './Components/Footer';
 
 const App = () => {
   const [resData, setResData] = useState();
-  
+
   const fetchData = async () => {
     try{
       const response = await axios('/resumeData.json');
@@ -17,24 +15,22 @@ const App = () => {
       console.log(e);
     }
   };
-  
+
   useEffect(() => {
     fetchData();
   },[]);
-  
+
 
   if(resData){
     const load = document.getElementById('siteLoading');
     if(load) {
       load.outerHTML = '';
     }
-    
+
     const mainData = resData.main;
     return (
       <Fragment>
         <Header mainData={mainData} />
-        <About mainData={mainData} />
-        <Footer mainData={mainData} />
       </Fragment>
     );
   } else{
